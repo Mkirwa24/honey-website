@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Wildflower honey jar</title>
+  <desc id="desc">A stylized jar of wildflower honey with flowers and a honey dipper.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff2c8"/>
+      <stop offset="100%" stop-color="#f1c96f"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff7e8" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#f7d173" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="honey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7ca52"/>
+      <stop offset="100%" stop-color="#c47a10"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <circle cx="132" cy="120" r="82" fill="#fff7de" opacity=".7"/>
+  <circle cx="736" cy="128" r="104" fill="#f4b93c" opacity=".18"/>
+  <rect y="520" width="900" height="155" fill="#dfb36a"/>
+  <ellipse cx="448" cy="548" rx="250" ry="34" fill="#8b5b1d" opacity=".18"/>
+  <rect x="323" y="182" width="254" height="296" rx="42" fill="url(#glass)" stroke="#f6edd8" stroke-width="8"/>
+  <rect x="355" y="144" width="190" height="60" rx="20" fill="#d4ad72"/>
+  <rect x="350" y="250" width="200" height="186" rx="28" fill="url(#honey)"/>
+  <rect x="366" y="270" width="168" height="40" rx="20" fill="#fff5d9" opacity=".78"/>
+  <text x="450" y="335" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#8f5405">Wildflower</text>
+  <text x="450" y="376" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#8f5405">Honey</text>
+  <rect x="575" y="210" width="26" height="190" rx="12" transform="rotate(26 588 305)" fill="#a36d25"/>
+  <g transform="translate(618 370) rotate(26)">
+    <rect x="-34" y="-24" width="68" height="14" rx="7" fill="#d29019"/>
+    <rect x="-34" y="-4" width="68" height="14" rx="7" fill="#d29019"/>
+    <rect x="-34" y="16" width="68" height="14" rx="7" fill="#d29019"/>
+  </g>
+  <g transform="translate(176 506)">
+    <circle r="24" fill="#f2b642"/>
+    <circle cx="-24" cy="20" r="24" fill="#fff1c3"/>
+    <circle cx="24" cy="20" r="24" fill="#fff1c3"/>
+    <circle cy="44" r="24" fill="#f7d45e"/>
+    <circle cx="-18" cy="60" r="24" fill="#fff1c3"/>
+    <circle cx="18" cy="60" r="24" fill="#fff1c3"/>
+    <circle cy="32" r="14" fill="#8f5405"/>
+    <rect x="-4" y="74" width="8" height="52" fill="#60803b"/>
+  </g>
+  <g transform="translate(738 520)">
+    <circle r="22" fill="#f2b642"/>
+    <circle cx="-22" cy="18" r="22" fill="#fff1c3"/>
+    <circle cx="22" cy="18" r="22" fill="#fff1c3"/>
+    <circle cy="40" r="22" fill="#fff1c3"/>
+    <circle cy="28" r="12" fill="#8f5405"/>
+    <rect x="-4" y="52" width="8" height="44" fill="#60803b"/>
+  </g>
+</svg>

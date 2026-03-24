@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Acacia honey jar</title>
+  <desc id="desc">A pale acacia honey jar with white blossoms and a clean presentation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8df"/>
+      <stop offset="100%" stop-color="#efd487"/>
+    </linearGradient>
+    <linearGradient id="jar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffefb" stop-opacity=".92"/>
+      <stop offset="100%" stop-color="#f2dd9f" stop-opacity=".96"/>
+    </linearGradient>
+    <linearGradient id="honey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9dfa0"/>
+      <stop offset="100%" stop-color="#d2a548"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <rect y="512" width="900" height="163" fill="#ead29f"/>
+  <circle cx="720" cy="118" r="96" fill="#fff9e6" opacity=".8"/>
+  <circle cx="180" cy="138" r="74" fill="#f3bd44" opacity=".16"/>
+  <ellipse cx="454" cy="550" rx="240" ry="30" fill="#916125" opacity=".14"/>
+  <rect x="328" y="176" width="244" height="302" rx="40" fill="url(#jar)" stroke="#fff7e1" stroke-width="8"/>
+  <rect x="356" y="138" width="188" height="60" rx="20" fill="#b6925e"/>
+  <rect x="350" y="258" width="200" height="166" rx="28" fill="url(#honey)"/>
+  <rect x="370" y="280" width="160" height="42" rx="20" fill="#fff8e8" opacity=".86"/>
+  <text x="450" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#8f5405">Acacia</text>
+  <text x="450" y="378" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#8f5405">Honey</text>
+  <g transform="translate(186 470)">
+    <path d="M0 110 C40 40 90 20 150 0" fill="none" stroke="#6e8f45" stroke-width="8" stroke-linecap="round"/>
+    <g transform="translate(64 52)">
+      <circle cx="-18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="-18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="0" r="10" fill="#e0bd54"/>
+    </g>
+    <g transform="translate(118 22)">
+      <circle cx="-18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="-18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="0" r="10" fill="#e0bd54"/>
+    </g>
+  </g>
+  <g transform="translate(700 454)">
+    <path d="M0 116 C-40 42 -84 18 -132 0" fill="none" stroke="#6e8f45" stroke-width="8" stroke-linecap="round"/>
+    <g transform="translate(-56 42)">
+      <circle cx="-18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="18" cy="0" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="-18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="18" r="18" fill="#fffdf8"/>
+      <circle cx="0" cy="0" r="10" fill="#e0bd54"/>
+    </g>
+  </g>
+</svg>

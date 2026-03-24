@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
+  <title id="title">Forest honey jar</title>
+  <desc id="desc">A dark forest honey jar with deep amber tones and a rustic atmosphere.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4e341d"/>
+      <stop offset="100%" stop-color="#1f160f"/>
+    </linearGradient>
+    <linearGradient id="jar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a771" stop-opacity=".75"/>
+      <stop offset="100%" stop-color="#5d3b19" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="honey" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8c4d0f"/>
+      <stop offset="100%" stop-color="#3d220c"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="675" fill="url(#bg)"/>
+  <rect y="500" width="900" height="175" fill="#2b1d12"/>
+  <circle cx="760" cy="104" r="92" fill="#a56d1c" opacity=".2"/>
+  <circle cx="162" cy="144" r="62" fill="#fff0bf" opacity=".08"/>
+  <g fill="#251a11">
+    <polygon points="86,530 136,410 186,530"/>
+    <polygon points="146,530 214,364 282,530"/>
+    <polygon points="650,530 720,348 790,530"/>
+    <polygon points="740,530 804,392 868,530"/>
+  </g>
+  <ellipse cx="450" cy="548" rx="240" ry="30" fill="#b88028" opacity=".12"/>
+  <rect x="326" y="176" width="248" height="304" rx="40" fill="url(#jar)" stroke="#c89a58" stroke-width="8"/>
+  <rect x="358" y="140" width="184" height="58" rx="18" fill="#76481c"/>
+  <rect x="348" y="250" width="204" height="180" rx="28" fill="url(#honey)"/>
+  <rect x="370" y="270" width="160" height="42" rx="20" fill="#f4ddb4" opacity=".72"/>
+  <text x="450" y="336" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#f6d08c">Forest</text>
+  <text x="450" y="376" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f6d08c">Reserve</text>
+  <rect x="608" y="226" width="24" height="186" rx="12" transform="rotate(32 620 319)" fill="#8e5c29"/>
+  <g transform="translate(660 388) rotate(32)">
+    <rect x="-34" y="-24" width="68" height="14" rx="7" fill="#bf7d16"/>
+    <rect x="-34" y="-4" width="68" height="14" rx="7" fill="#bf7d16"/>
+    <rect x="-34" y="16" width="68" height="14" rx="7" fill="#bf7d16"/>
+  </g>
+</svg>
