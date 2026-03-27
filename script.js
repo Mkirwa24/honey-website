@@ -5,7 +5,6 @@ const themeToggle = document.getElementById("themeToggle");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 const productCards = document.querySelectorAll(".product-card");
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
 const cartToggle = document.getElementById("cartToggle");
 const cartDrawer = document.getElementById("cartDrawer");
 const cartBackdrop = document.getElementById("cartBackdrop");
@@ -295,6 +294,15 @@ if (
     card.addEventListener("click", () => {
       openPriceModal(card);
     });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      event.preventDefault();
+      openPriceModal(card);
+    });
   });
 
   priceModalClose.addEventListener("click", closePriceModal);
@@ -312,25 +320,6 @@ if (
       openCartDrawer();
     });
   }
-}
-
-if (addToCartButtons.length) {
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-
-      const productName = button.dataset.product ?? "Honey product";
-      const productPrice = Number(button.dataset.price ?? "0");
-
-      addItemToCart(productName, productPrice);
-      openCartDrawer();
-      showAddedState(button);
-    });
-
-    button.addEventListener("keydown", (event) => {
-      event.stopPropagation();
-    });
-  });
 }
 
 if (cartToggle && cartDrawer && cartBackdrop && cartClose) {

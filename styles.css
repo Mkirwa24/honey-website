@@ -545,6 +545,11 @@ label,
   border-color: rgba(216, 139, 29, 0.35);
 }
 
+.product-card:focus-visible {
+  outline: 3px solid rgba(217, 146, 28, 0.45);
+  outline-offset: 4px;
+}
+
 .product-card > * {
   position: relative;
   z-index: 1;
@@ -578,13 +583,40 @@ label,
   color: var(--accent-dark);
 }
 
-.add-to-cart {
-  min-height: 2.9rem;
-  padding-inline: 1rem;
-  font-size: 0.95rem;
+.product-hint {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  opacity: 0.82;
 }
 
-.add-to-cart.is-added {
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(217, 146, 28, 0.15) 0%, rgba(255, 224, 138, 0.44) 100%);
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.product-cta::after {
+  content: "\2192";
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover .product-cta::after,
+.product-card:focus-within .product-cta::after {
+  transform: translateX(4px);
+}
+
+.button.is-added {
   background: linear-gradient(135deg, #7aa445 0%, #b5d76a 100%);
   box-shadow: 0 18px 34px rgba(103, 145, 40, 0.24);
   color: #1f2b0a;
@@ -1183,7 +1215,8 @@ textarea {
     text-align: left;
   }
 
-  .add-to-cart {
+  .product-cta {
+    justify-content: center;
     width: 100%;
   }
 
