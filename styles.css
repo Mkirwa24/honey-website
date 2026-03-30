@@ -1,19 +1,26 @@
+/* These root variables store the main colors, shadows, spacing, and radii used throughout the site. */
 :root {
+  /* Background colors for the page and lighter panel surfaces. */
   --bg: #f6ead2;
   --bg-soft: #fff7e8;
   --surface: rgba(255, 248, 232, 0.78);
   --surface-strong: rgba(255, 250, 240, 0.92);
+  /* Primary text colors used for headings, body text, and subdued copy. */
   --text: #2f2417;
   --muted: #6a573f;
+  /* Accent colors used for buttons, badges, highlights, and active states. */
   --accent: #d9921c;
   --accent-dark: #8f5405;
   --accent-soft: #f4c861;
   --highlight: #ffe08a;
+  /* Border and shadow tokens keep card styling consistent across sections. */
   --line: rgba(99, 69, 29, 0.12);
   --shadow: 0 24px 60px rgba(87, 57, 17, 0.12);
   --shadow-strong: 0 28px 80px rgba(72, 43, 10, 0.18);
+  /* Shared corner radius values for rounded cards and panels. */
   --radius: 24px;
   --radius-lg: 34px;
+  /* Layered page background gives the site its warm honey atmosphere. */
   --body-gradient:
     radial-gradient(circle at top left, rgba(255, 214, 102, 0.5), transparent 28%),
     radial-gradient(circle at 88% 10%, rgba(242, 166, 27, 0.16), transparent 20%),
@@ -21,12 +28,15 @@
     linear-gradient(180deg, #f4e2b8 0%, #fff8eb 42%, #f6edda 100%);
   --pattern-color: rgba(179, 120, 19, 0.04);
   --pattern-highlight: rgba(255, 243, 214, 0.2);
+  /* These are used by overlay components like the mobile nav, cart, and modal. */
   --panel-solid: rgba(255, 248, 230, 0.98);
   --backdrop: rgba(47, 36, 23, 0.18);
   --modal-backdrop: rgba(47, 36, 23, 0.45);
 }
 
+/* When dark mode is active, these variables replace the light-theme values so the rest of the stylesheet can keep using the same tokens. */
 body[data-theme="dark"] {
+  /* Replace the light palette with warmer low-light colors. */
   --bg: #1d1710;
   --bg-soft: #261d13;
   --surface: rgba(56, 41, 22, 0.72);
@@ -52,6 +62,7 @@ body[data-theme="dark"] {
   --modal-backdrop: rgba(0, 0, 0, 0.56);
 }
 
+/* These selectors restyle small interactive controls so they match the darker theme surfaces. */
 body[data-theme="dark"] .utility-button,
 body[data-theme="dark"] .button-secondary,
 body[data-theme="dark"] .price-modal-close,
@@ -70,12 +81,14 @@ body[data-theme="dark"] .price-modal-close:hover,
 body[data-theme="dark"] .price-modal-close:focus-visible,
 body[data-theme="dark"] .quantity-button:hover,
 body[data-theme="dark"] .remove-item:hover {
+  /* Slightly brighten dark-mode controls on interaction. */
   background: rgba(92, 66, 34, 0.96);
 }
 
 body[data-theme="dark"] .contact-form input,
 body[data-theme="dark"] .contact-form select,
 body[data-theme="dark"] .contact-form textarea {
+  /* Darken form fields while keeping text readable. */
   background: rgba(52, 38, 20, 0.9);
   color: var(--text);
   border-color: rgba(255, 223, 160, 0.14);
@@ -83,6 +96,7 @@ body[data-theme="dark"] .contact-form textarea {
 
 body[data-theme="dark"] .contact-form input::placeholder,
 body[data-theme="dark"] .contact-form textarea::placeholder {
+  /* Soften placeholder text so it stays secondary to user input. */
   color: rgba(245, 232, 200, 0.68);
 }
 
@@ -96,6 +110,7 @@ body[data-theme="dark"] .cart-item,
 body[data-theme="dark"] .cart-empty,
 body[data-theme="dark"] .nav-links a,
 body[data-theme="dark"] .nav-toggle {
+  /* Shared dark card/button surface for small containers and controls. */
   background: rgba(72, 52, 27, 0.88);
   color: var(--text);
 }
@@ -106,6 +121,7 @@ body[data-theme="dark"] .contact-list,
 body[data-theme="dark"] .product-card p,
 body[data-theme="dark"] .contact-copy p,
 body[data-theme="dark"] label {
+  /* Secondary text in dark mode uses the muted token for softer contrast. */
   color: var(--muted);
 }
 
@@ -115,6 +131,7 @@ body[data-theme="dark"] .product-card,
 body[data-theme="dark"] .contact-copy,
 body[data-theme="dark"] .contact-form,
 body[data-theme="dark"] .cart-panel {
+  /* Reuse the same card surfaces so all panels feel visually related. */
   background: linear-gradient(180deg, rgba(74, 54, 28, 0.96), rgba(44, 31, 17, 0.94));
 }
 
@@ -129,6 +146,7 @@ body[data-theme="dark"] .form-status,
 body[data-theme="dark"] label,
 body[data-theme="dark"] .footer,
 body[data-theme="dark"] .nav-links a {
+  /* Lighten body copy inside dark panels for readability. */
   color: #eadaba;
 }
 
@@ -140,6 +158,7 @@ body[data-theme="dark"] .cart-header h2,
 body[data-theme="dark"] .section-heading h2,
 body[data-theme="dark"] .brand,
 body[data-theme="dark"] .hero h1 {
+  /* Brightest text color reserved for main headings and key labels. */
   color: #fff4db;
 }
 
@@ -147,34 +166,41 @@ body[data-theme="dark"] .eyebrow,
 body[data-theme="dark"] .product-price,
 body[data-theme="dark"] .product-badge,
 body[data-theme="dark"] .cart-item-price {
+  /* Accent text stays warm and honey-colored in dark mode. */
   color: #ffd474;
 }
 
 body[data-theme="dark"] .product-badge {
+  /* Badge background is subtle so the text remains the focal point. */
   background: rgba(255, 205, 110, 0.12);
 }
 
 body[data-theme="dark"] .nav-links a,
 body[data-theme="dark"] .cart-item,
 body[data-theme="dark"] .cart-empty {
+  /* Slightly transparent panel style for stacked dark-mode surfaces. */
   background: rgba(84, 61, 31, 0.72);
 }
 
 body[data-theme="dark"] .nav-links a:hover,
 body[data-theme="dark"] .nav-links a:focus-visible {
+  /* Stronger hover state for nav links in dark mode. */
   color: #fff0cf;
   background: rgba(108, 78, 41, 0.88);
 }
 
+/* These base rules normalize layout behavior and establish the default document styling. */
 * {
   box-sizing: border-box;
 }
 
 html {
+  /* Smooth scrolling for in-page anchor links. */
   scroll-behavior: smooth;
 }
 
 body {
+  /* Applies the main typeface and background palette. */
   margin: 0;
   font-family: "Manrope", sans-serif;
   color: var(--text);
@@ -185,6 +211,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
+  /* Honeycomb-inspired background texture layered above the page gradient. */
   background-image:
     linear-gradient(30deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
     linear-gradient(150deg, var(--pattern-color) 12%, transparent 12.5%, transparent 87%, var(--pattern-color) 87.5%, var(--pattern-color)),
@@ -196,12 +223,15 @@ body::before {
   z-index: -1;
 }
 
+/* The next group styles the main hero area and the top navigation. */
 a {
+  /* Links inherit surrounding text color unless styled more specifically later. */
   color: inherit;
   text-decoration: none;
 }
 
 .hero {
+  /* Full-screen hero area anchors the first impression of the page. */
   min-height: 100vh;
   padding: 1.5rem clamp(1.25rem, 2vw, 2rem) 4rem;
   position: relative;
@@ -212,12 +242,14 @@ a {
 .hero::after {
   content: "";
   position: absolute;
+  /* Soft blurred circles give the hero some depth without extra markup. */
   border-radius: 999px;
   background: rgba(255, 196, 72, 0.22);
   filter: blur(10px);
 }
 
 .hero::before {
+  /* Large blurred glow near the top-right of the hero. */
   width: 22rem;
   height: 22rem;
   top: -6rem;
@@ -225,6 +257,7 @@ a {
 }
 
 .hero::after {
+  /* Smaller blurred glow near the lower-left of the hero. */
   width: 12rem;
   height: 12rem;
   bottom: 8rem;
@@ -232,6 +265,7 @@ a {
 }
 
 .navbar {
+  /* Top navigation stays above decorative hero layers. */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -243,6 +277,7 @@ a {
 }
 
 .nav-utilities {
+  /* Keeps utility buttons grouped together on the right. */
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -253,6 +288,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  /* Pill-shaped controls used for the theme switch and cart button. */
   min-height: 2.75rem;
   padding: 0.7rem 1rem;
   border: 1px solid var(--line);
@@ -263,17 +299,20 @@ a {
   font-weight: 700;
   cursor: pointer;
   backdrop-filter: blur(10px);
+  /* Only animate the visual properties that change on interaction. */
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .utility-button:hover,
 .utility-button:focus-visible {
+  /* Lift and brighten utility buttons when interacted with. */
   transform: translateY(-2px);
   border-color: rgba(217, 146, 28, 0.3);
   background: rgba(255, 255, 255, 0.56);
 }
 
 .cart-count {
+  /* Small circular badge for the cart quantity. */
   display: inline-grid;
   place-items: center;
   min-width: 1.65rem;
@@ -286,6 +325,7 @@ a {
 }
 
 .brand {
+  /* Brand wordmark uses the display serif for emphasis. */
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   font-weight: 700;
@@ -294,14 +334,17 @@ a {
 }
 
 .nav-links {
+  /* Horizontal nav list on larger screens. */
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
 .nav-links a {
+  /* Each nav link gets space for the animated underline. */
   color: var(--muted);
   font-weight: 600;
+  /* Needed so the ::after underline can position itself under the link text. */
   position: relative;
   transition: color 0.25s ease;
 }
@@ -309,6 +352,7 @@ a {
 .nav-links a::after {
   content: "";
   position: absolute;
+  /* Hidden underline that scales in on hover/focus. */
   left: 0;
   bottom: -0.35rem;
   width: 100%;
@@ -321,6 +365,7 @@ a {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
+  /* Hover and keyboard focus share the same active state. */
   color: var(--accent-dark);
 }
 
@@ -330,10 +375,12 @@ a {
 }
 
 .nav-backdrop {
+  /* Hidden on desktop; enabled in the mobile layout below. */
   display: none;
 }
 
 .nav-toggle {
+  /* Hamburger button only appears on smaller screens. */
   display: none;
   border: 0;
   background: transparent;
@@ -342,6 +389,7 @@ a {
 }
 
 .nav-toggle span {
+  /* Two lines that visually form the mobile menu icon. */
   display: block;
   width: 1.6rem;
   height: 2px;
@@ -351,14 +399,17 @@ a {
 }
 
 .hero-content {
+  /* Main copy container inside the hero section. */
   max-width: 46rem;
   padding: 6rem 0 2rem;
+  /* Keep hero text above decorative background layers. */
   position: relative;
   z-index: 1;
   animation: fade-slide-up 0.8s ease 0.12s both;
 }
 
 .eyebrow {
+  /* Small uppercase label used above headings. */
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.78rem;
@@ -369,12 +420,14 @@ a {
 
 .hero h1,
 .section-heading h2 {
+  /* Serif headings create contrast with the body font. */
   font-family: "Cormorant Garamond", serif;
   line-height: 0.95;
   letter-spacing: -0.02em;
 }
 
 .hero h1 {
+  /* Responsive headline size that scales with viewport width. */
   font-size: clamp(3.4rem, 7vw, 6.8rem);
   max-width: 12ch;
   margin: 0;
@@ -382,6 +435,7 @@ a {
 }
 
 .hero-copy {
+  /* Supporting paragraph under the main hero heading. */
   max-width: 42rem;
   color: var(--muted);
   font-size: 1.08rem;
@@ -390,6 +444,7 @@ a {
 }
 
 .hero-actions {
+  /* Action buttons can wrap if there is not enough horizontal space. */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -397,6 +452,7 @@ a {
 }
 
 .button {
+  /* Shared button base used by primary and secondary actions. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -408,16 +464,19 @@ a {
 }
 
 .button:hover {
+  /* Small lift on hover to make buttons feel clickable. */
   transform: translateY(-3px);
 }
 
 .button-primary {
+  /* Main action button uses a brighter honey gradient. */
   background: linear-gradient(135deg, #d08a15 0%, #f3bf45 52%, #ffde7c 100%);
   box-shadow: 0 18px 38px rgba(194, 129, 10, 0.22);
   color: #402508;
 }
 
 .button-secondary {
+  /* Secondary action keeps a lighter, glass-like appearance. */
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.46);
   backdrop-filter: blur(10px);
@@ -427,6 +486,7 @@ a {
   position: absolute;
   right: clamp(1.25rem, 4vw, 4rem);
   bottom: 3rem;
+  /* Floating glassy card layered on top of the hero background. */
   width: min(22rem, calc(100% - 2.5rem));
   padding: 1.4rem;
   border: 1px solid rgba(255, 241, 210, 0.82);
@@ -442,26 +502,31 @@ a {
 
 .hero-card p,
 .hero-card span {
+  /* Secondary text inside the floating hero card. */
   color: var(--muted);
 }
 
 .hero-card strong {
+  /* Emphasized metric inside the hero card. */
   display: block;
   margin: 0.35rem 0 0.6rem;
   font-size: 1.3rem;
 }
 
+/* These rules define the shared spacing and heading treatment used by each major section. */
 .section {
   padding: 5rem clamp(1.25rem, 2vw, 2rem);
   position: relative;
 }
 
 .section-heading {
+  /* Limits heading width so long text stays readable. */
   max-width: 42rem;
   margin-bottom: 2.2rem;
 }
 
 .section-heading h2 {
+  /* Large shared section heading style. */
   font-size: clamp(2.5rem, 5vw, 4.2rem);
   margin: 0;
 }
@@ -469,14 +534,17 @@ a {
 .about-grid,
 .product-grid,
 .contact-layout {
+  /* Reusable grid pattern shared by multiple sections. */
   display: grid;
   gap: 1.5rem;
 }
 
 .about-grid {
+  /* Three-column layout for the About cards on desktop. */
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* These selectors create the common card appearance reused across informational panels and interactive cards. */
 .about-grid article,
 .product-card,
 .contact-form,
@@ -492,6 +560,7 @@ a {
 .about-grid article,
 .product-card,
 .contact-copy {
+  /* These cards include internal spacing directly on the outer container. */
   padding: 1.6rem;
 }
 
@@ -499,19 +568,26 @@ a {
 .contact-copy,
 .contact-form,
 .product-card {
+  /* Animate only the properties that change on hover/focus. */
+  /* This is why cards do not jump instantly when hovered. */
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
+/* On hover, these informational cards move upward slightly, gain a stronger shadow, and tint the border to feel more active. */
 .about-grid article:hover,
 .contact-copy:hover,
 .contact-form:hover {
+  /* Move the card up slightly to create a lifted feel. */
   transform: translateY(-6px);
+  /* Stronger shadow makes the upward movement easier to notice. */
   box-shadow: var(--shadow-strong);
+  /* Warm border tint reinforces the active state. */
   border-color: rgba(217, 146, 28, 0.24);
 }
 
 .about-grid h3,
 .product-card h3 {
+  /* Tight heading spacing keeps cards compact. */
   margin-top: 0;
   margin-bottom: 0.8rem;
 }
@@ -522,39 +598,50 @@ a {
 .contact-list,
 label,
 .form-status {
+  /* Shared body-copy rhythm across cards and form labels. */
   color: var(--muted);
   line-height: 1.75;
 }
 
 .product-grid {
+  /* Four-column product grid on wide screens. */
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* Product cards are more animated than the simple content cards, so they get their own hover behavior and layered effects. */
 .product-card {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  /* Creates a stacking context so pseudo-elements stay inside the card. */
+  /* This prevents decorative layers from bleeding over nearby elements. */
   isolation: isolate;
   padding: 0;
 }
 
 .product-card:hover,
 .product-card:focus-within {
+  /* Product cards use lift + scale + slight rotation for a more playful hover. */
   transform: translateY(-10px) scale(1.02) rotate(-0.35deg);
   box-shadow: 0 28px 70px rgba(87, 57, 17, 0.2);
   border-color: rgba(216, 139, 29, 0.35);
 }
 
 .product-card:focus-visible {
+  /* Visible keyboard focus for accessibility. */
+  /* Keyboard users need a clear state even without hover. */
   outline: 3px solid rgba(217, 146, 28, 0.45);
   outline-offset: 4px;
 }
 
 .product-card > * {
   position: relative;
+  /* Keep real content above the decorative overlays. */
+  /* Without this, pseudo-elements could sit on top of text and images. */
   z-index: 1;
 }
 
+/* The product image scales smoothly during hover so the card feels more dynamic. */
 .product-image {
   display: block;
   width: 100%;
@@ -565,7 +652,9 @@ label,
 }
 
 .product-body {
+  /* Wraps text content below the product image. */
   position: relative;
+  /* Matching z-index keeps the content layer above the card effects. */
   z-index: 1;
   padding: 1.35rem 1.35rem 1.45rem;
 }
@@ -573,17 +662,20 @@ label,
 .product-actions {
   display: flex;
   align-items: center;
+  /* Push price and CTA to opposite sides on large screens. */
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: 1.2rem;
 }
 
 .product-price {
+  /* Price text stands out more strongly than body copy. */
   font-weight: 800;
   color: var(--accent-dark);
 }
 
 .product-hint {
+  /* Short instructional text that explains the card interaction. */
   margin: 1rem 0 0;
   font-size: 0.9rem;
   font-weight: 700;
@@ -592,6 +684,7 @@ label,
 }
 
 .product-cta {
+  /* CTA chip styled like a compact badge/button. */
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -608,6 +701,8 @@ label,
 .product-cta::after {
   content: "\2192";
   font-size: 1rem;
+  /* Only the arrow moves, not the whole CTA pill. */
+  /* This keeps the chip stable while still showing motion. */
   transition: transform 0.25s ease;
 }
 
@@ -617,14 +712,17 @@ label,
 }
 
 .button.is-added {
+  /* Temporary success state shown after adding an item to cart. */
   background: linear-gradient(135deg, #7aa445 0%, #b5d76a 100%);
   box-shadow: 0 18px 34px rgba(103, 145, 40, 0.24);
   color: #1f2b0a;
 }
 
+/* These pseudo-elements add decorative lighting and color overlays that animate when the product card becomes active. */
 .product-card::after {
   content: "";
   position: absolute;
+  /* Small radial glow in the lower corner of the card. */
   inset: auto -2rem -2rem auto;
   width: 6rem;
   height: 6rem;
@@ -636,6 +734,8 @@ label,
   content: "";
   position: absolute;
   inset: 0;
+  /* Top highlight plus lower color wash for the glassy card finish. */
+  /* Because this is decorative, it sits behind the real content. */
   background:
     linear-gradient(140deg, rgba(255, 231, 156, 0.22), transparent 45%),
     linear-gradient(180deg, transparent 55%, rgba(217, 146, 28, 0.07) 100%);
@@ -646,23 +746,27 @@ label,
 
 .product-card:hover::after,
 .product-card:focus-within::after {
+  /* Expand the glow when the card is active. */
   transform: scale(1.3);
   opacity: 0.9;
 }
 
 .product-card:hover .product-image,
 .product-card:focus-within .product-image {
+  /* Mild zoom and color boost add energy to the hover state. */
   transform: scale(1.06);
   filter: saturate(1.08) contrast(1.03);
 }
 
 .product-card:hover::before,
 .product-card:focus-within::before {
+  /* Increase the overlay presence when the card is active. */
   opacity: 1;
   transform: scale(1.04);
 }
 
 .product-badge {
+  /* Small category label above each product title. */
   display: inline-flex;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
@@ -676,23 +780,29 @@ label,
 }
 
 .contact-layout {
+  /* Contact text column is slightly smaller than the form column. */
+  /* The wider form column gives inputs more usable space. */
   grid-template-columns: 1fr 1.2fr;
   align-items: start;
 }
 
+/* The following rules style the contact layout, contact details, and form controls. */
 .contact-list {
+  /* Remove default list bullets so the contact details look like clean metadata. */
   list-style: none;
   padding: 0;
   margin: 1.5rem 0 0;
 }
 
 .contact-form {
+  /* Grid layout gives consistent spacing between form rows. */
   padding: 1.6rem;
   display: grid;
   gap: 1rem;
 }
 
 .contact-form label {
+  /* Stacks label text directly above its input control. */
   display: grid;
   gap: 0.45rem;
   font-weight: 600;
@@ -701,6 +811,8 @@ label,
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
+  /* Shared input styling for all form controls. */
+  /* Using one shared rule keeps the form visually consistent. */
   width: 100%;
   border: 1px solid rgba(77, 55, 28, 0.14);
   border-radius: 16px;
@@ -714,6 +826,7 @@ label,
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
+  /* Visible focus state improves keyboard and accessibility usability. */
   outline: 2px solid rgba(216, 139, 29, 0.3);
   border-color: rgba(216, 139, 29, 0.5);
   box-shadow: 0 0 0 6px rgba(255, 218, 126, 0.18);
@@ -721,15 +834,18 @@ label,
 }
 
 textarea {
+  /* Prevent horizontal resizing so the layout stays stable. */
   resize: vertical;
 }
 
 .form-status {
+  /* Reserved space avoids layout jump when status text appears. */
   min-height: 1.5rem;
   margin: 0;
 }
 
 .footer {
+  /* Simple centered footer copy. */
   padding: 1.5rem;
   text-align: center;
   color: var(--muted);
@@ -737,18 +853,21 @@ textarea {
 }
 
 .cart-drawer[hidden] {
+  /* Native hidden attribute fully removes the drawer from layout. */
   display: none;
 }
 
 .cart-drawer {
   position: fixed;
   inset: 0;
+  /* High z-index places the cart above the rest of the page. */
   z-index: 24;
 }
 
 .cart-backdrop {
   position: absolute;
   inset: 0;
+  /* Dimmed background separates the open drawer from the page content. */
   background: var(--modal-backdrop);
   backdrop-filter: blur(8px);
 }
@@ -757,6 +876,8 @@ textarea {
   position: absolute;
   top: 0;
   right: 0;
+  /* Drawer slides in from the right edge of the viewport. */
+  /* Absolute positioning anchors it against the fixed full-screen drawer shell. */
   display: flex;
   flex-direction: column;
   width: min(28rem, 100%);
@@ -768,6 +889,7 @@ textarea {
 }
 
 .cart-header {
+  /* Header row with drawer title on the left and close button on the right. */
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -777,6 +899,7 @@ textarea {
 }
 
 .cart-header h2 {
+  /* Large drawer title for the cart panel. */
   margin: 0;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 5vw, 2.5rem);
@@ -784,6 +907,8 @@ textarea {
 
 .cart-items {
   flex: 1;
+  /* Allow long carts to scroll inside the drawer without moving the header/footer. */
+  /* This keeps the total and checkout button visible at the bottom. */
   overflow-y: auto;
   padding: 1rem 0;
   display: grid;
@@ -792,6 +917,7 @@ textarea {
 
 .cart-item,
 .cart-empty {
+  /* Base surface for both real cart items and the empty state. */
   border: 1px solid var(--line);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.38);
@@ -799,10 +925,12 @@ textarea {
 }
 
 .cart-empty {
+  /* Muted copy for the empty cart state. */
   color: var(--muted);
 }
 
 .cart-item {
+  /* Each item uses a small internal grid for consistent spacing. */
   display: grid;
   gap: 0.75rem;
 }
@@ -811,21 +939,25 @@ textarea {
 .cart-total-row {
   display: flex;
   align-items: center;
+  /* Keep labels and totals aligned on opposite sides. */
   justify-content: space-between;
   gap: 1rem;
 }
 
 .cart-item-name {
+  /* Product name inside a cart item. */
   margin: 0;
   font-weight: 800;
 }
 
 .cart-item-price {
+  /* Line total for an individual cart item. */
   color: var(--accent-dark);
   font-weight: 700;
 }
 
 .cart-item-controls {
+  /* Quantity controls and remove action share one row on larger screens. */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -833,6 +965,7 @@ textarea {
 }
 
 .quantity-controls {
+  /* Groups the minus button, quantity text, and plus button. */
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -840,6 +973,7 @@ textarea {
 
 .quantity-button,
 .remove-item {
+  /* Shared styles for cart action buttons. */
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.56);
@@ -850,15 +984,18 @@ textarea {
 }
 
 .quantity-button {
+  /* Small square stepper button. */
   width: 2rem;
   height: 2rem;
 }
 
 .remove-item {
+  /* Wider pill button for removing an item. */
   padding: 0.5rem 0.8rem;
 }
 
 .cart-footer {
+  /* Summary area fixed to the bottom section of the cart drawer. */
   display: grid;
   gap: 1rem;
   padding-top: 1rem;
@@ -866,20 +1003,24 @@ textarea {
 }
 
 .cart-total-row {
+  /* Total label and total value sit on one row. */
   font-size: 1.05rem;
 }
 
 .cart-checkout {
+  /* Checkout button stretches the full width of the drawer. */
   width: 100%;
 }
 
 .price-modal[hidden] {
+  /* Hidden modal should not occupy space or intercept clicks. */
   display: none;
 }
 
 .price-modal {
   position: fixed;
   inset: 0;
+  /* Center the modal dialog in the viewport. */
   display: grid;
   place-items: center;
   padding: 1.5rem;
@@ -896,6 +1037,8 @@ textarea {
 .price-modal-dialog {
   position: relative;
   width: min(28rem, 100%);
+  /* Modal uses the same soft panel treatment as other floating UI. */
+  /* The width cap stops the dialog from becoming too wide on desktop. */
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: calc(var(--radius) + 4px);
@@ -906,6 +1049,7 @@ textarea {
 }
 
 .price-modal-dialog h2 {
+  /* Product title inside the modal dialog. */
   margin: 0.2rem 0 0.75rem;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 5vw, 2.8rem);
@@ -913,6 +1057,7 @@ textarea {
 }
 
 .price-modal-value {
+  /* Displays the selected product price. */
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
@@ -920,11 +1065,13 @@ textarea {
 }
 
 .modal-buy-now {
+  /* Full-width buy action inside the product modal. */
   width: 100%;
   margin-top: 1.25rem;
 }
 
 .price-modal-close {
+  /* Shared rounded close button style used in modal and cart UI. */
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -939,6 +1086,7 @@ textarea {
 
 @keyframes slide-in-right {
   from {
+    /* Start slightly off-screen, then settle into place. */
     opacity: 0;
     transform: translateX(24px);
   }
@@ -949,17 +1097,23 @@ textarea {
   }
 }
 
+/* Reveal items begin lower and transparent; JavaScript later adds .is-visible to animate them into place. */
 .reveal {
   opacity: 0;
+  /* Items start lower so they can slide upward into place. */
+  /* JavaScript later toggles .is-visible to animate this state away. */
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+/* This rule returns revealed elements to their normal position, and its transform can override hover transforms when selector specificity is equal. */
 .reveal.is-visible {
   opacity: 1;
+  /* This is the exact rule that can cancel a hover lift if both rules set transform. */
   transform: translateY(0);
 }
 
+/* These keyframes power shared entrance animations, the floating hero card, and the modal pop-in effect. */
 @keyframes fade-slide-up {
   from {
     opacity: 0;
@@ -975,10 +1129,12 @@ textarea {
 @keyframes float-card {
   0%,
   100% {
+    /* Floating card returns to its resting position at the start/end. */
     transform: translateY(0);
   }
 
   50% {
+    /* Midpoint lifts the card to create the looping float effect. */
     transform: translateY(-10px);
   }
 }
@@ -995,22 +1151,28 @@ textarea {
   }
 }
 
+/* These responsive rules adjust multi-column layouts and hero positioning for medium-sized screens. */
 @media (max-width: 980px) {
   .about-grid,
   .product-grid,
   .contact-layout {
+    /* Collapse 3-4 column layouts into 2 columns on medium screens. */
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .product-grid {
+    /* Helps equal-height product cards line up more cleanly. */
     align-items: stretch;
   }
 
   .product-card {
+    /* Card fills available height inside the grid cell. */
     height: 100%;
   }
 
   .product-body {
+  /* Lets the CTA row stick toward the bottom of the card. */
+    /* This helps cards stay balanced even when descriptions have different lengths. */
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -1024,10 +1186,12 @@ textarea {
   .hero-card {
     position: static;
     margin-top: 2rem;
+    /* Remove floating positioning so the card stacks naturally on smaller widths. */
     animation: fade-slide-up 0.9s ease 0.28s both;
   }
 
   .hero {
+    /* Hero no longer needs full-screen height on medium screens. */
     min-height: auto;
     padding-bottom: 3rem;
   }
@@ -1042,18 +1206,22 @@ textarea {
   }
 }
 
+/* These responsive rules reorganize the layout for phones, including stacked cards and the mobile navigation drawer. */
 @media (max-width: 720px) {
   body.nav-open,
   body.cart-open {
+    /* Prevent the page from scrolling behind overlays on small screens. */
     overflow: hidden;
   }
 
   .hero {
+    /* Reduce padding so the hero fits smaller phone screens better. */
     min-height: auto;
     padding: 1.1rem 1rem 2.5rem;
   }
 
   .navbar {
+    /* Switch from horizontal flex layout to a compact mobile grid. */
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -1061,10 +1229,12 @@ textarea {
   }
 
   .brand {
+    /* Slightly shrink the brand wordmark on mobile. */
     font-size: 1.7rem;
   }
 
   .nav-utilities {
+    /* Utilities move below the main brand/menu row on mobile. */
     grid-column: 1 / -1;
     grid-row: 2;
     justify-content: flex-start;
@@ -1073,6 +1243,7 @@ textarea {
   }
 
   .nav-toggle {
+    /* Rounded mobile menu trigger. */
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -1093,6 +1264,8 @@ textarea {
     top: 8.25rem;
     right: 1rem;
     left: 1rem;
+    /* Hidden by default, then animated in when .open is added by JavaScript. */
+    /* Opacity + pointer-events prevents accidental clicks when closed. */
     min-width: 0;
     padding: 1.25rem;
     border: 1px solid rgba(77, 55, 28, 0.1);
@@ -1111,6 +1284,7 @@ textarea {
   }
 
   .nav-links a {
+    /* Nav links become stacked touch-friendly buttons on mobile. */
     display: block;
     width: 100%;
     padding: 0.95rem 1rem;
@@ -1130,6 +1304,7 @@ textarea {
   }
 
   .nav-backdrop {
+    /* Fades in behind the mobile navigation panel. */
     position: fixed;
     inset: 0;
     display: block;
@@ -1149,10 +1324,12 @@ textarea {
   .about-grid,
   .product-grid,
   .contact-layout {
+    /* Stack cards and form into a single column on phones. */
     grid-template-columns: 1fr;
   }
 
   .hero-content {
+    /* Reduce top spacing because the hero is no longer full-height. */
     padding-top: 3.5rem;
   }
 
@@ -1171,14 +1348,17 @@ textarea {
   }
 
   .hero-actions {
+    /* Stack hero buttons vertically on phones. */
     flex-direction: column;
   }
 
   .hero-actions .button {
+    /* Full-width buttons are easier to tap on mobile screens. */
     width: 100%;
   }
 
   .utility-button {
+    /* Slightly tighter button sizing for mobile. */
     min-height: 2.55rem;
     padding: 0.6rem 0.9rem;
   }
@@ -1207,6 +1387,7 @@ textarea {
   }
 
   .product-actions {
+    /* Stack price and CTA vertically when width is limited. */
     flex-direction: column;
     align-items: stretch;
   }
@@ -1216,6 +1397,7 @@ textarea {
   }
 
   .product-cta {
+    /* Make CTA easier to tap on small screens. */
     justify-content: center;
     width: 100%;
   }
@@ -1234,22 +1416,28 @@ textarea {
   }
 
   .cart-panel {
+    /* Drawer becomes full-width on phones. */
     width: 100%;
     padding: 1.1rem;
   }
 
   .cart-item-controls {
+    /* Controls stack so they do not feel cramped on mobile. */
     flex-direction: column;
     align-items: stretch;
   }
 
   .quantity-controls {
+    /* Spread quantity controls across the available width. */
     justify-content: space-between;
   }
 }
 
+/* On touch-first devices, these rules disable hover-based movement so the UI does not appear stuck in a fake hover state. */
 @media (hover: none) {
+  /* Avoid fake hover states on touch devices where hover is unreliable. */
   .product-card:hover {
+    /* Reset product card motion so taps do not leave it looking "stuck". */
     transform: none;
     box-shadow: var(--shadow);
     border-color: var(--line);
@@ -1268,16 +1456,20 @@ textarea {
   .about-grid article:hover,
   .contact-copy:hover,
   .contact-form:hover {
+    /* Revert informational card hover lift on touch-only devices. */
+    /* Touch screens do not have persistent hover in the same way as desktop pointers. */
     transform: none;
     box-shadow: var(--shadow);
     border-color: var(--line);
   }
 }
 
+/* If the user prefers reduced motion, this block turns off most animations and transitions for accessibility. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
+    /* Honor OS accessibility settings by turning off motion-heavy effects. */
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

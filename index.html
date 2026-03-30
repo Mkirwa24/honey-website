@@ -1,79 +1,113 @@
 <!DOCTYPE html>
+<!-- Declares this document as HTML5. -->
 <html lang="en">
 <head>
+  <!-- Sets the character encoding so text displays correctly. -->
   <meta charset="UTF-8">
+  <!-- Makes the layout scale properly on phones, tablets, and desktops. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title shown in the browser tab. -->
   <title>Golden Hive Honey</title>
+  <!-- Short summary used by search engines and link previews. -->
   <meta name="description" content="Golden Hive Honey delivers pure, responsibly collected honey from wild blossoms and curated apiaries.">
+  <!-- Load the display fonts used across the landing page. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Imports the serif and sans-serif font families used by the design. -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon shown in the browser tab. -->
+  <link rel="icon" type="image/svg+xml" href="assets/bee-favicon.svg">
+  <!-- Main stylesheet for layout, colors, hover effects, and animations. -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Hero section with primary navigation and top-of-page brand messaging. -->
   <header class="hero" id="home">
+    <!-- Site navigation bar. -->
     <nav class="navbar">
+      <!-- Brand name links back to the top of the page. -->
       <a class="brand" href="#home">Golden Hive</a>
+      <!-- Utility controls for theme switching and cart access. -->
       <div class="nav-utilities">
+        <!-- Toggles light and dark mode. -->
         <button class="utility-button theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+          <!-- Visible button label pieces. aria-hidden hides duplicate text from screen readers. -->
           <span class="theme-toggle-icon" aria-hidden="true">Mode</span>
           <span class="theme-toggle-label">Dark</span>
         </button>
+        <!-- Opens the shopping cart drawer. -->
         <button class="utility-button cart-toggle" id="cartToggle" type="button" aria-label="Open shopping cart">
           <span aria-hidden="true">Cart</span>
+          <!-- Cart item count updated by JavaScript. -->
           <span class="cart-count" id="cartCount">0</span>
         </button>
       </div>
+      <!-- Mobile menu button shown on smaller screens. -->
       <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <!-- Empty spans become the hamburger lines in CSS. -->
         <span></span>
         <span></span>
       </button>
+      <!-- In-page navigation links to the main sections. -->
       <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
       </div>
+      <!-- Backdrop closes the mobile nav when the user clicks outside it. -->
       <div class="nav-backdrop" id="navBackdrop" hidden></div>
     </nav>
 
+    <!-- Main hero copy and primary calls to action. -->
     <div class="hero-content">
+      <!-- Small intro label above the main headline. -->
       <p class="eyebrow">Raw. Floral. Traceable.</p>
+      <!-- Main value proposition for the brand. -->
       <h1>Harvested honey with character from every bloom.</h1>
+      <!-- Supporting sentence that explains the product promise. -->
       <p class="hero-copy">
         We collect pure honey from trusted beekeepers and wildflower regions, then bottle it with minimal processing so the natural aroma, color, and texture stay intact.
       </p>
+      <!-- Primary call-to-action buttons. -->
       <div class="hero-actions">
         <a class="button button-primary" href="#products">Explore Honey</a>
         <a class="button button-secondary" href="#contact">Request a Quote</a>
       </div>
     </div>
 
+    <!-- Floating summary card used as a visual callout inside the hero. -->
     <div class="hero-card">
       <p>Seasonal collection</p>
-      <strong>18 regions sourced</strong>
+      <strong>Carefully sourced across trusted beekeeping regions</strong>
       <span>Single-origin and blended varieties for homes, retailers, and specialty stores.</span>
     </div>
   </header>
 
   <main>
+    <!-- About section: three brand-value cards. -->
     <section class="section about-section" id="about">
+      <!-- Reusable heading block for the section. -->
       <div class="section-heading">
         <p class="eyebrow">About Us</p>
         <h2>Honey collection built on quality and consistency.</h2>
       </div>
+      <!-- Grid of informational cards. -->
       <div class="about-grid">
+        <!-- Card 1: sourcing standards. -->
         <article>
           <h3>Responsible sourcing</h3>
           <p>
             We work with small-scale beekeepers and regional collectors who focus on careful harvesting methods, clean handling, and respect for seasonal bee activity.
           </p>
         </article>
+        <!-- Card 2: processing approach. -->
         <article>
           <h3>Minimal processing</h3>
           <p>
             Our honey is strained, tested, and bottled without unnecessary heating so the flavor profile, viscosity, and natural appearance remain authentic.
           </p>
         </article>
+        <!-- Card 3: packaging and buyer focus. -->
         <article>
           <h3>Made for modern buyers</h3>
           <p>
@@ -83,29 +117,35 @@
       </div>
     </section>
 
+    <!-- Product section: interactive product cards that open pricing details. -->
     <section class="section products-section" id="products">
       <div class="section-heading">
         <p class="eyebrow">Products</p>
         <h2>Distinct honey types for different tastes.</h2>
       </div>
+      <!-- Product card grid. Each card is clickable and behaves like a button. -->
       <div class="product-grid">
+        <!-- Product card: price is stored in a data attribute for JavaScript to read. -->
         <article class="product-card" data-price="$12 per jar" tabindex="0" role="button" aria-label="View price and order for Wildflower Gold">
           <img
             class="product-image"
             src="assets/wildflower-honey.svg"
             alt="A jar of golden wildflower honey beside fresh meadow flowers"
           >
+          <!-- Text content and actions for the product. -->
           <div class="product-body">
             <div class="product-badge">Wildflower</div>
             <h3>Wildflower Gold</h3>
             <p>Collected from open meadow blossoms, this amber honey carries layered floral notes, a soft herbal finish, and a smooth texture that feels at home on toast, in tea, or in everyday baking.</p>
             <p class="product-hint">Tap this card to reveal the price and order instantly.</p>
+            <!-- Price and call-to-action row. -->
             <div class="product-actions">
               <span class="product-price">$12 per jar</span>
               <span class="product-cta" aria-hidden="true">View price and order</span>
             </div>
           </div>
         </article>
+        <!-- Product card: Clear Blossom Honey. -->
         <article class="product-card" data-price="$14 per jar" tabindex="0" role="button" aria-label="View price and order for Clear Blossom Honey">
           <img
             class="product-image"
@@ -123,6 +163,7 @@
             </div>
           </div>
         </article>
+        <!-- Product card: Deep Forest Reserve. -->
         <article class="product-card" data-price="$16 per jar" tabindex="0" role="button" aria-label="View price and order for Deep Forest Reserve">
           <img
             class="product-image"
@@ -140,6 +181,7 @@
             </div>
           </div>
         </article>
+        <!-- Product card: Citrus Bloom Honey. -->
         <article class="product-card" data-price="$13 per jar" tabindex="0" role="button" aria-label="View price and order for Citrus Bloom Honey">
           <img
             class="product-image"
@@ -160,16 +202,21 @@
       </div>
     </section>
 
+    <!-- Contact section: business details on the left and inquiry form on the right. -->
     <section class="section contact-section" id="contact">
       <div class="section-heading">
         <p class="eyebrow">Contact</p>
         <h2>Ask about supply, pricing, or custom packaging.</h2>
       </div>
+      <!-- Two-column layout: contact details and form. -->
       <div class="contact-layout">
+        <!-- Static company contact information card. -->
         <div class="contact-copy">
+          <!-- Introductory contact message. -->
           <p>
             Tell us what you need and we will get back to you with availability, packaging options, and delivery details.
           </p>
+          <!-- Quick contact details list. -->
           <ul class="contact-list">
             <li>Email: hello@goldenhive.example</li>
             <li>Phone: +254-000</li>
@@ -177,7 +224,9 @@
           </ul>
         </div>
 
+        <!-- Inquiry form handled by script.js for a client-side confirmation message. -->
         <form class="contact-form" id="contactForm">
+          <!-- Each label wraps its own input for better usability and accessibility. -->
           <label>
             Name
             <input type="text" name="name" placeholder="Your name" required>
@@ -201,6 +250,7 @@
             Message
             <textarea name="message" rows="5" placeholder="Tell us what you need" required></textarea>
           </label>
+          <!-- Submit button and live status message for feedback after submit. -->
           <button class="button button-primary" type="submit">Send Message</button>
           <p class="form-status" id="formStatus" aria-live="polite"></p>
         </form>
@@ -208,12 +258,16 @@
     </section>
   </main>
 
+  <!-- Simple site footer. -->
   <footer class="footer">
     <p>&copy; 2026 Golden Hive Honey. Pure honey collections for modern markets.</p>
   </footer>
 
+  <!-- Slide-in shopping cart drawer populated from localStorage. -->
   <div class="cart-drawer" id="cartDrawer" hidden>
+    <!-- Clicking the darkened background closes the drawer. -->
     <div class="cart-backdrop" id="cartBackdrop"></div>
+    <!-- Side panel that shows current cart items. -->
     <aside class="cart-panel" aria-labelledby="cartTitle">
       <div class="cart-header">
         <div>
@@ -222,9 +276,11 @@
         </div>
         <button class="price-modal-close" id="cartClose" type="button" aria-label="Close shopping cart">Close</button>
       </div>
+      <!-- JavaScript injects the current cart items here. -->
       <div class="cart-items" id="cartItems">
         <p class="cart-empty">Your cart is empty. Add a honey jar to get started.</p>
       </div>
+      <!-- Cart summary and checkout action. -->
       <div class="cart-footer">
         <div class="cart-total-row">
           <span>Total</span>
@@ -235,17 +291,22 @@
     </aside>
   </div>
 
+  <!-- Product price modal opened when a product card is clicked or keyboard-activated. -->
   <div class="price-modal" id="priceModal" hidden>
+    <!-- Background layer behind the modal. -->
     <div class="price-modal-backdrop" id="priceModalBackdrop"></div>
+    <!-- Dialog box that shows the selected product price. -->
     <div class="price-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
       <button class="price-modal-close" id="priceModalClose" type="button" aria-label="Close price popup">Close</button>
       <p class="eyebrow">Product Price</p>
+      <!-- JavaScript fills these fields with the chosen product details. -->
       <h2 id="priceModalTitle"></h2>
       <p class="price-modal-value" id="priceModalValue"></p>
       <button class="button button-primary modal-buy-now" id="modalBuyNow" type="button">Buy Now</button>
     </div>
   </div>
 
+  <!-- Client-side behavior for navigation, theme, cart, modal, and reveal animations. -->
   <script src="script.js"></script>
 </body>
 </html>
